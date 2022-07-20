@@ -1,0 +1,36 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    
+<style>
+i{
+width:80%;
+}
+</style>
+    
+    <table   class="table table-dark" >
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .Id }}</td>
+        <td> {{ .Name }} </td>
+        <td>{{ .City }} </td> 
+        <td><a href="/show?id={{ .Id }}"><i class="fa fa-check-square" style="color: green"></i></a></td>
+        <td><a href="/edit?id={{ .Id }}"><i class="fa fa-edit" style="color: blue"></i></a></td>
+        <td><a href="/delete?id={{ .Id }}"> <i class="fa fa-trash" style="color: red"></i></a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

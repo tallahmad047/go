@@ -1,0 +1,12 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div class="container">
+  <!-- Content here -->
+  <h2> Register {{ .Id }} </h2>
+      <p>Name: {{ .Name }}</p>
+      <p>City:  {{ .City }}</p><br /> <a href="/edit?id={{ .Id }}"><i class="fa fa-edit" style="color: blue"></a></p>
+</div>
+    
+  {{ template "Footer" }}
+{{ end }}
